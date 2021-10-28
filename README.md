@@ -2,6 +2,7 @@
 
 ## Index
 
+- [Download](#download)
 - [Datasets](#datasets)
     - [:earth_americas: CETUC](#cetuc): 144h
     - [:earth_americas: Constituição](#constituicao): 9h
@@ -20,12 +21,49 @@
 :warning: TBD
 
 
+## Download
+
+Datasets are stored on Google Drive using [DVC](https://dvc.org/). Remote
+`public` is (hopefully) accessible by everyone that has a Google account to
+authenticate on GDrive via DVC. Remote `private` on the other hand is, well...
+private :slightly_smiling_face:.
+
+To access the data you need to have DVC installed with Google Drive support:
+
+```bash
+$ conda create --name dvc python=3.9 --yes && conda activate dvc
+(dvc) $ pip install pip -U && pip install "dvc[gdrive]"
+```
+
+Then you can use [`dvc pull`](https://dvc.org/doc/command-reference/pull) to
+download the contents from the `public` remote:
+
+```bash
+$ dvc pull -r public
+```
+
+Beware this is gonna raise an error saying
+
+```text
+ERROR: failed to pull data from the cloud - Checkout failed for following targets:
+...
+Is your cache up to date?
+```
+
+But in the end all public datasets will already be under the `datasets` dir.
+This error is probably because I didn't set a default remote. Or because DVC is
+known for not handling multiple remotes well on data registries. You should see
+issues 2095 on their GitHub and questions 51 174 553 and 712 on their discord
+page. Someday I may copy and paste the links here. Moreover, this may also
+not be the best tool for the job but at least it is a free storage.
+
+
 ## Datasets 
 
 ### CETUC
 
 Seção 4.1.3 da 
-[Dissertação de Mestrado de Rafael Oliveira (PPGCC, 2012)](https://ppgcc.propesp.ufpa.br/Disserta%C3%A7%C3%B5es_2012/Rafael%20Santana%20Oliveira_Disserta%C3%A7%C3%A3o.pdf):
+[dissertação de mestrado de Rafael Oliveira (PPGCC, 2012)](https://ppgcc.propesp.ufpa.br/Disserta%C3%A7%C3%B5es_2012/Rafael%20Santana%20Oliveira_Disserta%C3%A7%C3%A3o.pdf):
 
 > O [Centro de Estudos em Telecomunicações (CETUC)](https://www.ctc.puc-rio.br/laboratorios-cetuc),
 > através do Professor Doutor Abraham Alcaim, gentilmente cedeu ao LaPS, 
@@ -126,7 +164,7 @@ TBD
 
 #### Descrição 2
 
-Descrição retirada da seção 3.5 da 
+Seção 3.5 da 
 [tese de doutorado de Nelson Neto (PPGEE, 2010)](https://ppgee.propesp.ufpa.br/ARQUIVOS/teses/TD05_2011_Nelson%20Cruz%20Sampaio%20Neto.pdf):
 
 > Com o intuito de obter uma boa avaliação de desempenho e possibilitar a
@@ -166,8 +204,8 @@ Descrição retirada da seção 3.5 da
 
 :warning: private corpus :lock:
 
-Descrição retirada da seção 4.1.2 da 
-[dissertação de Rafael Oliveira (PPGCC, 2012)](https://ppgcc.propesp.ufpa.br/Disserta%C3%A7%C3%B5es_2012/Rafael%20Santana%20Oliveira_Disserta%C3%A7%C3%A3o.pdf):
+Seção 4.1.2 da 
+[dissertação de mestrado de Rafael Oliveira (PPGCC, 2012)](https://ppgcc.propesp.ufpa.br/Disserta%C3%A7%C3%B5es_2012/Rafael%20Santana%20Oliveira_Disserta%C3%A7%C3%A3o.pdf):
 
 > A LapsStory, desenvolvida em [Neto et al. 2010], é uma base de áudio para PB
 > composto por arquivos extraídos de audiobooks, manualmente segmentados em
@@ -183,7 +221,7 @@ Descrição retirada da seção 4.1.2 da
 
 :warning: private corpus :lock:
 
-Retirada da seção 3.6 da 
+Seção 3.6 da 
 [tese de doutrado de Nelson Neto (PPGEE, 2011)](https://ppgee.propesp.ufpa.br/ARQUIVOS/teses/TD05_2011_Nelson%20Cruz%20Sampaio%20Neto.pdf):
 
 > O corpus de áudio Spoltech [81] foi criado pela Universidade Federal do Rio
@@ -219,7 +257,7 @@ Retirada da seção 3.6 da
 :warning: private corpus :lock:
 
 Seção 4.1.1 da 
-[Dissertação de Mestrado de Rafael Oliveira (PPGCC, 2012)](https://ppgcc.propesp.ufpa.br/Disserta%C3%A7%C3%B5es_2012/Rafael%20Santana%20Oliveira_Disserta%C3%A7%C3%A3o.pdf):
+[dissertação de mestrado de Rafael Oliveira (PPGCC, 2012)](https://ppgcc.propesp.ufpa.br/Disserta%C3%A7%C3%B5es_2012/Rafael%20Santana%20Oliveira_Disserta%C3%A7%C3%A3o.pdf):
 
 > O West Point Brazilian Portuguese Speech é um corpus de áudio para PB criado
 > pelo governo dos EUA com intuito de desenvolver modelos acústicos para 
