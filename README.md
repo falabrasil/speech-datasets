@@ -2,13 +2,14 @@
 
 ## Index
 
-- [CETUC](#cetuc): 144h
-- [Constituição](#constituicao): 9h
-- [Código de Defesa do Consumidor](#codigo-de-defesa-do-consumidor): TBD
-- [LaPS Benchmark (LapsBM)](#laps-benchmark): 54 min
-- [LaPS Story](#laps-story): 16h
-- [Spoltech](#spoltech): 4h
-- [West Point](#west-point): 8h
+- [Datasets](#datasets)
+    - [:earth_americas: CETUC](#cetuc): 144h
+    - [:earth_americas: Constituição](#constituicao): 9h
+    - [:earth_americas: Código de Defesa do Consumidor](#codigo-de-defesa-do-consumidor): TBD
+    - [:earth_americas: LaPS Benchmark (LapsBM)](#laps-benchmark): 54 min
+    - [:lock: LaPS Story](#laps-story): 16h
+    - [:lock: Spoltech](#spoltech): 4h
+    - [:lock: West Point](#west-point): 8h
 
 ### Other
 
@@ -19,7 +20,9 @@
 :warning: TBD
 
 
-## CETUC
+## Datasets 
+
+### CETUC
 
 Seção 4.1.3 da 
 [Dissertação de Mestrado de Rafael Oliveira (PPGCC, 2012)](https://ppgcc.propesp.ufpa.br/Disserta%C3%A7%C3%B5es_2012/Rafael%20Santana%20Oliveira_Disserta%C3%A7%C3%A3o.pdf):
@@ -92,7 +95,7 @@ wav  txt  size  speaker                         wav  txt  size  speaker
 </details>
 
 
-## Constituição
+### Constituição
 
 > Corpus de voz da Constituição Federal. Em seguida, os arquivos foram 
 > segmentados em arquivos menores, com aproximadamente 30 segundos de duração 
@@ -101,14 +104,14 @@ wav  txt  size  speaker                         wav  txt  size  speaker
 > áudio. O ambiente de gravação utilizado é bastante controlado.
 
 
-## Código de Defesa do Consumidor
+### Código de Defesa do Consumidor
 
 TBD
 
 
-## LaPS Benchmark
+### LaPS Benchmark
 
-### Descrição 1
+#### Descrição 1
 
 > Corpus de voz utilizado para avaliação de desempenho de sistemas LVCSR.
 > Atualmente composto por 700 frases, o corpus possui 35 locutores com 20 
@@ -121,7 +124,7 @@ TBD
 > presença de ruído nas gravações, com isso busca-se caracterizar ambientes 
 > onde software de reconhecimento de voz são utilizados.
 
-### Descrição 2
+#### Descrição 2
 
 Descrição retirada da seção 3.5 da 
 [tese de doutorado de Nelson Neto (PPGEE, 2010)](https://ppgee.propesp.ufpa.br/ARQUIVOS/teses/TD05_2011_Nelson%20Cruz%20Sampaio%20Neto.pdf):
@@ -159,9 +162,9 @@ Descrição retirada da seção 3.5 da
 > passarem por um processo de revisão manual.
 
 
-## LaPS Story
+### LaPS Story
 
-:warning: private corpus
+:warning: private corpus :lock:
 
 Descrição retirada da seção 4.1.2 da 
 [dissertação de Rafael Oliveira (PPGCC, 2012)](https://ppgcc.propesp.ufpa.br/Disserta%C3%A7%C3%B5es_2012/Rafael%20Santana%20Oliveira_Disserta%C3%A7%C3%A3o.pdf):
@@ -176,9 +179,9 @@ Descrição retirada da seção 4.1.2 da
 > [FalaBrasil 2012].
 
 
-## Spoltech
+### Spoltech
 
-:warning: private corpus
+:warning: private corpus :lock:
 
 Retirada da seção 3.6 da 
 [tese de doutrado de Nelson Neto (PPGEE, 2011)](https://ppgee.propesp.ufpa.br/ARQUIVOS/teses/TD05_2011_Nelson%20Cruz%20Sampaio%20Neto.pdf):
@@ -211,9 +214,9 @@ Retirada da seção 3.6 da
 > citados, os arquivos de áudio foram re-amostrados para 16.000 Hz.  
 
 
-## West Point
+### West Point
 
-:warning: private corpus
+:warning: private corpus :lock:
 
 Seção 4.1.1 da 
 [Dissertação de Mestrado de Rafael Oliveira (PPGCC, 2012)](https://ppgcc.propesp.ufpa.br/Disserta%C3%A7%C3%B5es_2012/Rafael%20Santana%20Oliveira_Disserta%C3%A7%C3%A3o.pdf):
