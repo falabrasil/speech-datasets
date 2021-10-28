@@ -28,7 +28,8 @@ Datasets are stored on Google Drive using [DVC](https://dvc.org/). Remote
 authenticate on GDrive via DVC. Remote `private` on the other hand is, well...
 private :slightly_smiling_face:.
 
-To access the data you need to have DVC installed with Google Drive support:
+To access the data you need to have 
+[DVC installed with Google Drive support](https://dvc.org/doc/command-reference/remote/add#description):
 
 ```bash
 $ conda create --name dvc python=3.9 --yes && conda activate dvc
