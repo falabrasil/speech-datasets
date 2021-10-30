@@ -3,12 +3,13 @@
 ## Index
 
 - [Download](#download)
+- [Stats](#stats)
 - [Datasets](#datasets)
     - [:earth_americas: CETUC](#cetuc): 144h
     - [:earth_americas: Constituição](#constituicao): 9h
-    - [:earth_americas: Código de Defesa do Consumidor](#codigo-de-defesa-do-consumidor): TBD
+    - [:earth_americas: Código de Defesa do Consumidor](#codigo-de-defesa-do-consumidor): 1h
     - [:earth_americas: LaPS Benchmark (LapsBM)](#laps-benchmark): 54 min
-    - [:lock: LaPS Story](#laps-story): 16h
+    - [:question: LaPS Story](#laps-story): 5h (16h?)
     - [:lock: Spoltech](#spoltech): 4h
     - [:lock: West Point](#west-point): 8h
 
@@ -57,6 +58,31 @@ known for not handling multiple remotes well on data registries. You should see
 issues 2095 on their GitHub and questions 51 174 553 and 712 on their discord
 page. Someday I may copy and paste the links here. Moreover, this may also
 not be the best tool for the job but at least it is a free storage.
+
+### TODO download single dataset
+
+```bash
+$ dvc pull -r public datasets/lapsbm
+```
+
+
+## Stats
+
+```text
+$ bash src/stats.sh datasets/
+-----------------------------------------------------------------------------------------------------------------------------
+dataset                                            overall |               train |                 dev |                test 
+                 size  srate   #utt #spk     dur     words |  #utt  #spk     dur |  #utt  #spk     dur |  #utt  #spk     dur 
+-----------------------------------------------------------------------------------------------------------------------------
+cetuc             17G  16000 100998  101 144h39m   1040278 | 80998    81 116h28m | 10000    10  13h43m | 10000    10  14h27m 
+coddef           158M  16000    253    1   1h25m     10763 |   203     1   1h06m |    25     1   0h09m |    25     1   0h08m 
+constituicao     1.4G  22050   1255    1   8h58m     69807 |  1004     1   7h11m |   125     1   0h53m |   126     1   0h53m 
+lapsbm           141M  22050    700   35   0h54m      7228 |     0     0   0h00m |     0     0   0h00m |   700    35   0h54m 
+lapsstory        588M  16000    591    5   5h18m     40269 |   435     5   3h54m |     0     0   0h00m |   156     5   1h23m 
+spoltech         521M  16000   7199  475   4h19m     38984 |  5778   380   3h28m |   720    47   0h25m |   701    48   0h25m 
+westpoint        624M  16000   5440   70   5h22m     27476 |  4341    56   4h17m |   539     7   0h31m |   560     7   0h33m 
+-----------------------------------------------------------------------------------------------------------------------------
+```
 
 
 ## Datasets 
@@ -203,7 +229,7 @@ Seção 3.5 da
 
 ### LaPS Story
 
-:warning: private corpus :lock:
+:warning: private corpus :question:
 
 Seção 4.1.2 da 
 [dissertação de mestrado de Rafael Oliveira (PPGCC, 2012)](https://ppgcc.propesp.ufpa.br/Disserta%C3%A7%C3%B5es_2012/Rafael%20Santana%20Oliveira_Disserta%C3%A7%C3%A3o.pdf):
