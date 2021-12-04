@@ -24,6 +24,10 @@
 
 ## Download
 
+```bash
+./one_script_to_get_them_all.sh
+```
+
 Datasets are stored on Google Drive using [DVC](https://dvc.org/). Remote
 `public` is (hopefully) accessible by everyone that has a Google account to
 authenticate on GDrive via DVC. Remote `private` on the other hand is, well...
@@ -59,10 +63,30 @@ issues 2095 on their GitHub and questions 51 174 553 and 712 on their discord
 page. Someday I may copy and paste the links here. Moreover, this may also
 not be the best tool for the job but at least it is a free storage.
 
-### TODO download single dataset
+### Download only a fraction of a dataset
+
+To download only LapsBenchmark dataset:
 
 ```bash
 $ dvc pull -r public datasets/lapsbm
+```
+
+To download only the test set of CETUC dataset (gambiarra):
+
+```bash
+$ dvc pull -r public datasets/cetuc/test.list
+$ sed "s#^#$PWD/datasets/cetuc/#g" datasets/cetuc/test.list | xargs dvc pull -r public
+$ sed "s#^#$PWD/datasets/cetuc/#g" datasets/cetuc/test.list | sed "s/\.wav/.txt/g" | xargs dvc pull -r public
+```
+
+To download the test set of all FalaBrasil's public datasets:
+
+```bash
+for ds in cetuc coddef constituicao lapsbm ; do
+    dvc pull -r public datasets/$ds/test.list
+    sed "s#^#$PWD/datasets/$ds/#g" datasets/$ds/test.list | xargs dvc pull -r public
+    sed "s#^#$PWD/datasets/$ds/#g" datasets/$ds/test.list | sed "s/\.wav/.txt/g" | xargs dvc pull -r public
+done
 ```
 
 
