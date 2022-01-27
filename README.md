@@ -324,9 +324,6 @@ Seção 4.1.1 da
 > amostrados em 16.000 Hz com 16 bits por amostra.
 
 
-[![FalaBrasil](https://gitlab.com/falabrasil/avatars/-/raw/main/logo_fb_git_footer.png)](https://ufpafalabrasil.gitlab.io/ "Visite o site do Grupo FalaBrasil") [![UFPA](https://gitlab.com/falabrasil/avatars/-/raw/main/logo_ufpa_git_footer.png)](https://portal.ufpa.br/ "Visite o site da UFPA")
-
-
 ### MF: Male/Female for Forced Phonetic Alignment
 
 This is a two-speaker dataset manually aligned at the phoneme level (Praat's
@@ -366,6 +363,8 @@ $ while read line ; do awk '/"phones"/,/"syllphones"/' $line | grep 'text =' | a
   o    o~   O    p    r    R    s    S    t    tS   u    u~   v    w    w~   X    z    Z    _
 ```
 
+
+[![FalaBrasil](https://gitlab.com/falabrasil/avatars/-/raw/main/logo_fb_git_footer.png)](https://ufpafalabrasil.gitlab.io/ "Visite o site do Grupo FalaBrasil") [![UFPA](https://gitlab.com/falabrasil/avatars/-/raw/main/logo_ufpa_git_footer.png)](https://portal.ufpa.br/ "Visite o site da UFPA")
 
 __Grupo FalaBrasil (2022)__     
 __Universidade Federal do Pará (UFPA)__       
