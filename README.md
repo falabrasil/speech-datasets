@@ -327,6 +327,46 @@ Seção 4.1.1 da
 [![FalaBrasil](https://gitlab.com/falabrasil/avatars/-/raw/main/logo_fb_git_footer.png)](https://ufpafalabrasil.gitlab.io/ "Visite o site do Grupo FalaBrasil") [![UFPA](https://gitlab.com/falabrasil/avatars/-/raw/main/logo_ufpa_git_footer.png)](https://portal.ufpa.br/ "Visite o site da UFPA")
 
 
-__Grupo FalaBrasil (2021)__     
-__Universidade Federal do Pará__       
+### MF: Male/Female for Forced Phonetic Alignment
+
+This is a two-speaker dataset manually aligned at the phoneme level (Praat's
+textgrid files provided). Each portion contains 200 instances from both a male
+and a female speaker. This repo has been used as ground truth for the following
+papers:
+
+- [Souza and Neto, PROPOR 2016](https://link.springer.com/chapter/10.1007%2F978-3-319-41552-9_38)
+- [Dias et al., BRACIS 2020](https://link.springer.com/chapter/10.1007%2F978-3-030-61377-8_44)
+- [Batista and Neto. BRACIS 2021](https://link.springer.com/chapter/10.1007/978-3-030-91699-2_32)
+- [Batista and Neto. PROPOR 2022](https://cassota.gitlab.io/#publications)
+- [Batista et al., EURASIP 2022](https://cassota.gitlab.io/#publications)
+
+One major problem with both male and female datasets is that they were hand
+aligned according to an unknown phoneset, which nobody really knows where it
+actually came from. So it required some considerable amount of processing in
+order to convert the original phoneset to the FalaBrasil phoneset, since the
+latter is the one which all acoustic models are trained over.
+
+Dataset original phone set:
+
+```bash
+$ find male/textgrid -name "*.TextGrid" > filelist
+$ while read line ; do awk '/phones/,/syll/' $line | grep 'text =' | awk '{print $3}' ; done < filelist | sort | uniq | sed 's/"//g'
+  4    6    6~   a    a~   b    d    e    e~   E    f    g    h    h/   h\   i    i~   j    j~   J
+  k    l    L    m    n    o    o~   O    p    s    S    t    u    u~   v    w    w~   z    Z    _
+```
+
+FalaBrasil original phone set (see also our
+[NLP Generator](https://gitlab.com/fb-nlp/nlp-generator) library, which
+performs the G2P conversion):
+
+```bash
+$ find male/textgrid_falabrasil -name "*.TextGrid" > filelist
+$ while read line ; do awk '/"phones"/,/"syllphones"/' $line | grep 'text =' | awk '{print $3}' ; done < filelist | sort | uniq | sed 's/"//g'
+  a    a~   b    d    dZ   e    e~   E    f    g    i    i~   j    j~   J    k    l    L    m    n
+  o    o~   O    p    r    R    s    S    t    tS   u    u~   v    w    w~   X    z    Z    _
+```
+
+
+__Grupo FalaBrasil (2022)__     
+__Universidade Federal do Pará (UFPA)__       
 Cassio Batista - https://cassota.gitlab.io
