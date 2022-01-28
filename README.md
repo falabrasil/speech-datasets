@@ -16,10 +16,10 @@
 ### Other
 
 - SID
-- Common Voice
-- Multilingual LibriSpeech
-
-:warning: TBD
+- [Common Voice](https://commonvoice.mozilla.org/pt/datasets)
+- [Multilingual LibriSpeech](http://www.openslr.org/94/)
+- [CORAA](https://github.com/nilc-nlp/CORAA)
+- [VoxForge](http://www.voxforge.org/pt/Downloads)
 
 
 ## Download
