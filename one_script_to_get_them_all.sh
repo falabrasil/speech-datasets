@@ -19,22 +19,22 @@ dvc pull -r private
 #dvc pull -r align
 
 msg "$0: Downloading Multilingual LibriSpeech..."
-src/get_mls.sh datasets
+src/fetch/get_mls.sh datasets
 
 #msg "$0: Downloading SID..."
-#src/get_sid.sh datasets
+#src/fetch/get_sid.sh datasets
 
 msg "$0: Downloading Multilingual TEDx..."
-src/get_mtedx.sh datasets
+src/fetch/get_mtedx.sh datasets
 
 msg "$0: Downloading VoxForge..."
-src/get_vf.sh datasets/voxforge
+src/fetch/get_voxforge.sh datasets/voxforge
 
 msg "$0: Downloading Common Voice..."
-src/get_cv.sh "$CV_URL" datasets
+src/fetch/get_cv.sh "$CV_URL" datasets
 
 msg "$0: Downloading CORAA..."
-src/get_coraa.sh datasets/coraa
+src/fetch/get_coraa.sh datasets/coraa
 
 e_date=$(date)
 
