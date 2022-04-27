@@ -8,7 +8,7 @@ link="$(echo $1 | sed "s/=/\\=/g" | sed "s/&/\\&/g")"
 dir=$2
 [ ! -d $dir ] && echo "$0: dir does not exist: $dir" && exit 1
 
-fname=cv-corpus-7.0-2021-07-21-pt.tar.gz
+fname=cv-corpus-8.0-2022-01-19-pt.tar
 [ -f $dir/$fname ] && \
   echo "$0: file $fname exists under $dir. skipping download..." || \
   { wget $link -O $dir/$fname || exit 1 ; }

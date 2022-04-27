@@ -1,8 +1,12 @@
 datasets/cv-corpus-7.0-2021-07-21-pt.tar.gz
 datasets/cv-corpus-7.0-2021-07-21/
+datasets/cv-corpus-8.0-2022-01-19-pt.tar
+datasets/cv-corpus-8.0-2022-01-19/
 datasets/mls_portuguese_opus.tar.gz
 datasets/mls_portuguese_opus/
 datasets/mtedx_pt.tgz
 datasets/pt-pt/
 datasets/voxforge
 datasets/coraa
+datasets/mls
+datasets/mtedx

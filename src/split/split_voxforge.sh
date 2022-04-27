@@ -14,12 +14,14 @@ function get_seeded_random() {
 
 [ $# -ne 1 ] && echo "usage: $0 <corpus-dir>" && exit 1
 dir=$1
+[[ "$(basename $dir)" == "data" ]] && \
+  echo "$0: error: please pass the parent dir as arg" && exit 1
 
 rm -f $dir/*.list $dir/*.list.spk
 touch $dir/{train,dev,test}.list.spk
 
 spk_list=$(mktemp --suffix='.list')
-find $dir -mindepth 1 -maxdepth 1 -type d | \
+find $dir -mindepth 1 -maxdepth 2 -type d | \
   shuf --random-source=<(get_seeded_random) > $spk_list
 
 n=$(wc -l < $spk_list)  # 100 %
@@ -41,7 +43,7 @@ tail -n $((n - n / 2)) $held_list > $dir/test.list.spk  # ~10%
 
 for spk_file in $dir/{train,dev,test}.list.spk ; do
   while read line ; do
-    find $line -name "*.wav" 
+    find $line -name "*.wav" | sed "s#$dir##g" | sed "s#^/##g"
   done < $spk_file > ${spk_file%.spk}
   rm -f $spk_file
 done
