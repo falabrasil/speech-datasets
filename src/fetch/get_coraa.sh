@@ -24,8 +24,7 @@ declare -A files=(
 [ $# -ne 1 ] && echo "usage: $0 <data-dir>" && exit 1 || dir=$1
 mkdir -p $dir || exit 1
 
-#train.zip metadata_train_final.csv
-for fname in dev.zip metadata_dev_final.csv test.zip metadata_test_final.csv ; do
+for fname in train.zip metadata_train_final.csv dev.zip metadata_dev_final.csv test.zip metadata_test_final.csv ; do
   fhash=${files[$fname]}
   echo "$0: downloading $fname at $fhash"
   [ -f $dir/$fname ] && echo "$0: $fname exists under $dir. skipping..." && continue
