@@ -9,6 +9,7 @@
     - [:earth_americas: Constituição](#constituicao): 9h
     - [:earth_americas: Código de Defesa do Consumidor](#codigo-de-defesa-do-consumidor): 1h
     - [:earth_americas: LaPS Benchmark (LapsBM)](#laps-benchmark): 54 min
+    - :earth_americas: MF (male/female, for phonetic aligment): 15 min
     - [:question: LaPS Story](#laps-story): 5h (16h?)
     - [:lock: Spoltech](#spoltech): 4h
     - [:lock: West Point](#west-point): 8h
@@ -363,9 +364,18 @@ $ while read line ; do awk '/"phones"/,/"syllphones"/' $line | grep 'text =' | a
   o    o~   O    p    r    R    s    S    t    tS   u    u~   v    w    w~   X    z    Z    _
 ```
 
+#### Download
+
+This is kept in a separate DVC remote because it isn't intendend ot be used
+for ASR, but rather for a single and different purpose: phonetic alignment.
+
+```bash
+$ dvc pull -r align  # or, to avoid warnings: dvc pull -r align datasets/mf
+```
+
 
 [![FalaBrasil](https://gitlab.com/falabrasil/avatars/-/raw/main/logo_fb_git_footer.png)](https://ufpafalabrasil.gitlab.io/ "Visite o site do Grupo FalaBrasil") [![UFPA](https://gitlab.com/falabrasil/avatars/-/raw/main/logo_ufpa_git_footer.png)](https://portal.ufpa.br/ "Visite o site da UFPA")
 
-__Grupo FalaBrasil (2022)__     
+__Grupo FalaBrasil (2023)__     
 __Universidade Federal do Pará (UFPA)__       
 Cassio Batista - https://cassota.gitlab.io
