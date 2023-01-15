@@ -1,5 +1,11 @@
 # Speech Datasets in Brazilian Portuguese :brazil:
 
+:warning: private datasets such as LapsStory, Spoltech and WestPoint are
+**not** being versioned in a DVC's private remote any longer because that was
+only possible via Shared Drives in GDrive Enterprise edition.
+Since UFPA's canceled its subscription, and I'm not sure how to protect an
+entire folder in GDrive's standard account...
+
 ## Index
 
 - [Download](#download)
@@ -19,6 +25,7 @@
 - SID
 - [Common Voice](https://commonvoice.mozilla.org/pt/datasets)
 - [Multilingual LibriSpeech](http://www.openslr.org/94/)
+- [Multilingual TEDx](https://www.openslr.org/100/)
 - [CORAA](https://github.com/nilc-nlp/CORAA)
 - [VoxForge](http://www.voxforge.org/pt/Downloads)
 
