@@ -1,5 +1,11 @@
 # Speech Datasets in Brazilian Portuguese :brazil:
 
+:warning: private datasets such as LapsStory, Spoltech and WestPoint are
+**not** being versioned in a DVC's private remote any longer because that was
+only possible via Shared Drives in GDrive Enterprise edition.
+Since UFPA's canceled its subscription, and I'm not sure how to protect an
+entire folder in GDrive's standard account...
+
 ## Index
 
 - [Download](#download)
@@ -9,6 +15,7 @@
     - [:earth_americas: Constituição](#constituicao): 9h
     - [:earth_americas: Código de Defesa do Consumidor](#codigo-de-defesa-do-consumidor): 1h
     - [:earth_americas: LaPS Benchmark (LapsBM)](#laps-benchmark): 54 min
+    - :earth_americas: MF (male/female, for phonetic aligment): 15 min
     - [:question: LaPS Story](#laps-story): 5h (16h?)
     - [:lock: Spoltech](#spoltech): 4h
     - [:lock: West Point](#west-point): 8h
@@ -18,6 +25,7 @@
 - SID
 - [Common Voice](https://commonvoice.mozilla.org/pt/datasets)
 - [Multilingual LibriSpeech](http://www.openslr.org/94/)
+- [Multilingual TEDx](https://www.openslr.org/100/)
 - [CORAA](https://github.com/nilc-nlp/CORAA)
 - [VoxForge](http://www.voxforge.org/pt/Downloads)
 
@@ -363,9 +371,18 @@ $ while read line ; do awk '/"phones"/,/"syllphones"/' $line | grep 'text =' | a
   o    o~   O    p    r    R    s    S    t    tS   u    u~   v    w    w~   X    z    Z    _
 ```
 
+#### Download
+
+This is kept in a separate DVC remote because it isn't intendend ot be used
+for ASR, but rather for a single and different purpose: phonetic alignment.
+
+```bash
+$ dvc pull -r align  # or, to avoid warnings: dvc pull -r align datasets/mf
+```
+
 
 [![FalaBrasil](https://gitlab.com/falabrasil/avatars/-/raw/main/logo_fb_git_footer.png)](https://ufpafalabrasil.gitlab.io/ "Visite o site do Grupo FalaBrasil") [![UFPA](https://gitlab.com/falabrasil/avatars/-/raw/main/logo_ufpa_git_footer.png)](https://portal.ufpa.br/ "Visite o site da UFPA")
 
-__Grupo FalaBrasil (2022)__     
+__Grupo FalaBrasil (2023)__     
 __Universidade Federal do Pará (UFPA)__       
 Cassio Batista - https://cassota.gitlab.io
