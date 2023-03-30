@@ -10,3 +10,4 @@ datasets/voxforge
 datasets/coraa
 datasets/mls
 datasets/mtedx
+*.swp
