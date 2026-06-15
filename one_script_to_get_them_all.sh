@@ -9,14 +9,18 @@ msg() { echo -e "\e[93m[$(date)] $1\e[0m" ; }
 
 s_date=$(date)
 
-msg "$0: Downloading FalaBrasil's datasets from DVC's Google Drive public remote..."
-dvc pull -r public
+git lfs install  # necessary?
 
-msg "$0: Downloading FalaBrasil's datasets from DVC's Google Drive private remote..."
-dvc pull -r private
+msg "$0: Downloading public datasets from FalaBrasil data repo..."
+git clone https://huggingface.co/datasets/falabrasil/lapsbm datasets/lapsbm
+git clone https://huggingface.co/datasets/falabrasil/cetuc datasets/cetuc
+git clone https://huggingface.co/datasets/falabrasil/constituicao datasets/constituicao
+git clone https://huggingface.co/datasets/falabrasil/coddef datasets/coddef
 
-#msg "$0: Downloading FalaBrasil's male-female dataset for forced phonetic alignment from DVC's Google Drive private remote..."
-#dvc pull -r align
+msg "$0: Downloading private datasets from FalaBrasil data repo..."
+git clone https://huggingface.co/datasets/falabrasil/spoltech datasets/spoltech
+git clone https://huggingface.co/datasets/falabrasil/westpoint datasets/westpoint
+git clone https://huggingface.co/datasets/falabrasil/lapsstory datasets/lapsstory
 
 msg "$0: Downloading Multilingual LibriSpeech..."
 src/fetch/get_mls.sh datasets/mls
